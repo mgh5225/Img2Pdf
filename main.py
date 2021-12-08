@@ -47,7 +47,7 @@ if __name__ == "__main__":
     frame_lock = Lock()
 
     for fileName in fileNames:
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as reader_executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_readers) as reader_executor:
             new_reader = reader.Reader(fileName)
             frames = []
             writers = []
